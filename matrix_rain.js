@@ -10,7 +10,7 @@ function preload() {
   font = loadFont('data/matrix.otf');
 }
 function setup() {
-  createCanvas(1950, 1000);
+  createCanvas(windowWidth, windowHeight);
   for(let i = 0 ; i< 100; i++){
     drops.push(new Drop(font));
   }
@@ -23,4 +23,7 @@ function draw() {
     drops[i].fall();
     drops[i].display();
   }
+}
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
